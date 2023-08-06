@@ -7,11 +7,11 @@ import org.hibernate.Session;
 import static core.util.HibernateUtil.getSessionFactory;
 
 public interface CoreDao<P, I> {
-	int insert(P entity);
+	int insert(P pojo);
 
 	int deleteById(I id);
 
-	int update(P entity);
+	int update(P pojo);
 
 	P selectById(I id);
 
@@ -19,6 +19,7 @@ public interface CoreDao<P, I> {
 	
 	//hibernate的session
 	default Session getSession() {
-		return getSessionFactory().getCurrentSession();
+		//return getSessionFactory().getCurrentSession();
+		return getSessionFactory().openSession();
 	}
 }
