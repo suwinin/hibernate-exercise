@@ -1,4 +1,4 @@
-package web.member.pojo;
+package web.member.entity;
 
 import java.sql.Timestamp;
 
@@ -10,7 +10,7 @@ import javax.persistence.Id;
 
 import core.pojo.Core;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Getter; 
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
@@ -19,7 +19,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Member extends Core {
+public class Member extends Core { 
 	
 	private static final long serialVersionUID = 1062017833925367218L;
 	@Id
@@ -40,6 +40,14 @@ public class Member extends Core {
 	private String updater;
 	@Column(name="LAST_UPDATED_DATE", insertable=false)
 	private Timestamp lastUpdatedDate;
+	
+	public Member(String username, String nickname) {
+		
+		this.username = username;
+		this.nickname = nickname;
+	}
+	
+	
 
 //	public Member() {
 //	}

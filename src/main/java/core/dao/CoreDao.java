@@ -7,11 +7,11 @@ import org.hibernate.Session;
 import static core.util.HibernateUtil.getSessionFactory;
 
 public interface CoreDao<P, I> {
-	int insert(P pojo);
+	int insert(P entity);
 
 	int deleteById(I id);
 
-	int update(P pojo);
+	int update(P entity);
 
 	P selectById(I id);
 
